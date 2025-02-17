@@ -1,0 +1,43 @@
+body {
+    background: black;
+    color : red;
+    font-family: Gadugi;
+}
+
+nav, footer{
+    display: flex;
+    justify-content: center;
+    border-radius: 5px;
+    color: white;
+    background: darkslateblue;
+    text-align: center;
+}
+a {
+    text-decoration: none;
+    color : white;
+}
+
+.btn{
+    color: white;
+    background: darkslateblue;
+}
+.card{
+    background: darkslateblue;
+    color: white;
+
+
+}
+
+table, th {
+    border: 2px solid red;
+    text-align: center;
+    padding: 2rem;
+}
+thead, td{
+    border: 2px solid red;
+    text-align: center;
+    padding: 2rem;
+}
+.col-lg-3{
+    list-style: none;
+}

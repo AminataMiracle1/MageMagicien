@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" charset="UTF-8">
+    <title>Jeux Mission</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+
+<body class="container text-danger">
+<header>
+    <nav class="navbar navbar-expand-lg navbar-light ">
+        <a class="navbar-brand text-light" href="Mage.html">Mage</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav">
+                <a class="nav-item nav-link text-light" href="Sort.html">Sort</a>
+                <a class="nav-item nav-link text-light" href="mission.html">Mission</a>
+                <a class="nav-item nav-link text-light" href="Accueille.html">Accueille</a>
+            </div>
+        </div>
+    </nav>
+</header>
+
+
+<main >
+
+    <h1 class="text-danger text-center ">Les mages</h1>
+    <div class="d-flex m-auto" >
+        <!-- Card 1 -->
+        <ul class=" justify-content-center row" >
+            <li class="col-lg-3 m-3 ">
+                <div class="card">
+                    <img src="../assets/img/image_F6LmrMGA_1735387951447_raw.jpg" />
+                    <div class="card-body">
+                        <p>Nom du mage: Mage 1</p>
+                        <p>Force du mage: 75</p>
+                    </div>
+                    <button type="button" class="btn" data-bs-toggle="modal" data-bs-target="#mage1">
+                        Voir les sorts
+                    </button>
+                </div>
+            </li>
+            <!-- Card 2 -->
+            <li class="col-lg-3 m-3 ">
+                <div class="card " >
+                    <img src="../assets/img/UneFilleChezbleu.jpg" />
+                    <div class="card-body">
+                        <p>Nom du mage: Mage 2</p>
+                        <p>Force du mage: 80</p>
+                    </div>
+                    <button type="button" class="btn" data-bs-toggle="modal" data-bs-target="#mage2">
+                        Voir les sorts
+                    </button>
+                </div>
+            </li>
+            <!-- Card 3 -->
+            <li class="col-lg-3 m-3 ">
+                <div class="card">
+                    <img src="../assets/img/imgeUneFille.jpg" />
+                    <div class="card-body">
+                        <p>Nom du mage: Mage 3</p>
+                        <p>Force du mage: 85</p>
+                    </div>
+                    <button type="button" class="btn" data-bs-toggle="modal" data-bs-target="#mage3">
+                        Voir les sorts
+                    </button>
+                </div>
+            </li>
+        </ul>
+    </div>
+
+    <!-- Modal 1 -->
+    <div class="modal fade text-black" id="mage1" tabindex="-1" aria-labelledby="mage1Label" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="mage1Label">Les Sorts du Mage 1</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <ul>
+                        <li>Flammes infernales
+                            <ul>
+                                <li>Force : 50</li>
+                                <li>Coût : 20 mana</li>
+                                <li>Type : Attaque</li>
+                            </ul>
+                        </li>
+                        <li>Tempête de glace
+                            <ul>
+                                <li>Force : 40</li>
+                                <li>Coût : 15 mana</li>
+                                <li>Type : Contrôle</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal 2 -->
+    <div class="modal fade text-black" id="mage2" tabindex="-1" aria-labelledby="mage2Label" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="mage2Label">Les Sorts du Mage 2</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <ul>
+                        <li>Explosion magique
+                            <ul>
+                                <li>Force : 60</li>
+                                <li>Coût : 25 mana</li>
+                                <li>Type : Attaque</li>
+                            </ul>
+                        </li>
+                        <li>Barrière protectrice
+                            <ul>
+                                <li>Force : 30</li>
+                                <li>Coût : 10 mana</li>
+                                <li>Type : Défense</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal 3 -->
+    <div class="modal fade text-black" id="mage3" tabindex="-1" aria-labelledby="mage3Label" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="mage3Label">Les Sorts du Mage 3</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <ul>
+                        <li>Vague de feu
+                            <ul>
+                                <li>Force : 70</li>
+                                <li>Coût : 30 mana</li>
+                                <li>Type : Attaque</li>
+                            </ul>
+                        </li>
+                        <li>Guérison rapide
+                            <ul>
+                                <li>Force : 40</li>
+                                <li>Coût : 15 mana</li>
+                                <li>Type : Soins</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+<footer>
+    <div class="d-flex justify-content-center ">
+        <a href="Mission.html">Choisir une mission</a>
+    </div>
+</footer>
+
+</body>
+</html>
+
