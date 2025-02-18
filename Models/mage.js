@@ -8,7 +8,7 @@ function Mage(id, nom, forceMagique, image, listesSorts = [], listesMissions = [
     this.$forceMagique = forceMagique;
     this.$image = image;
     this.$listeSorts = listesSorts;
-    this.$listeMissions = listesMissions;
+    this.$listeMissionsReussi = listesMissions;
 }
 
 // Fonction pour créer un mage et l'ajouter à la liste
@@ -35,6 +35,7 @@ creerMage("Merlin", 90, "../assets/img/imgeUneFille.jpg", [
 // Fonction pour afficher les mages
 function afficherListesMages() {
     let placemage = "";
+    let modalContent = "";
     for (let mage of $listeMages) {
         placemage += `
             <li class="col-lg-3 m-3">
@@ -51,9 +52,70 @@ function afficherListesMages() {
                 </div>
             </li>
         `;
-    }
-    document.querySelector(".mageAffichage").innerHTML =placemage;
-}
+        /*** Cette idee je l'aime bien on récupère la structure de l'affichages des sorts ici.
+         Puis dans la même boucle il ajouter un modal à chaque mage.
+         Maintenant moi ce qui me vient en tête ou plus du non compréhension :
+         Est-ce que quand une personne va cliquer le bouton de carte pour voir les sorts
+         gestion de l'événement vas s'activer.
+         Cette méthode que je viens de créer elle s'execute juste au début au lancement de la page alors comment
+         activé la gestion de l'événement du bouton.
+         **/
+        // Générer les modales des sorts pour chaque mage
+        let sortsHTML = mage.$listeSorts.map(sort => `
+            <li>${sort.nom}
+                <ul>
+                    <li>Force : ${sort.force}</li>
+                    <li>Coût : ${sort.cout} mana</li>
+                    <li>Type : ${sort.type}</li>
+                </ul>
+            </li>
+        `).join("");
 
+        console.log("Voir les sorts" +sortsHTML)
+
+        modalContent += `
+            <div class="modal fade text-black" id="mage${mage.$id}" tabindex="-1" aria-labelledby="mage${mage.$id}Label" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h1 class="modal-title h5" id="mage${mage.$id}Label">Les Sorts  ${mage.$nom}</h1>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                        </div>
+                        <div class="modal-body">
+                            <ul>${sortsHTML}</ul>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fermer</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        `;
+    }
+    // Ajouter les cartes des mages
+    document.querySelector(".mageAffichage").innerHTML = placemage;
+    // Ajouter les modales des sorts
+    document.querySelector("main").insertAdjacentHTML("beforeend", modalContent);
+}
 // Afficher les mages au chargement
 afficherListesMages();
+
+
+// Réattacher les événements aux boutons après l'ajout des éléments dans le DOM
+document.querySelectorAll(".voirSorts").forEach(button => {
+    button.addEventListener("click", function () {
+        let mageId = this.getAttribute("data-id");
+        let modal = new bootstrap.Modal(document.getElementById(`mage${mageId}`));
+        modal.show();
+    });
+});
+
+/**
+ * Faire une gestion quand on clique sur un mage on affiches la listes des mission qui se trouve en bas
+ * Afficher Mage
+ */
+function afficherMission(){
+    for(let mageMission of $listeMages){
+
+    }
+}

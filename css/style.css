@@ -41,3 +41,10 @@ thead, td{
 .col-lg-3{
     list-style: none;
 }
+.lesMissionsMage{
+    background: darkslateblue;
+    color: white;
+
+    margin: 2rem;
+    list-style: none;
+}

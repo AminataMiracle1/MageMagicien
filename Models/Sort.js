@@ -70,6 +70,6 @@ function ajouterSort(){
     let newSort = creerSort(nom,type,force, cout)
     $listeSorts.push(newSort)
     afficherSort()
-
 }
 $("#btnAjouterSort").on("click", ajouterSort)
+
