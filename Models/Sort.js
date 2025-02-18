@@ -54,11 +54,7 @@ afficherSort() ;
 // créer un objet sort
 function creerSort(nom, type, force, cout){
     // Créér un id
-    let id = 0;
-    for (let sort of $listeSorts){
-        id++;
-    }
-
+    let id = $listeSorts.length;
     return  new Sort( id, nom,type, force, cout, "../assets/img/lampe.jpg" )
 }
 
@@ -72,9 +68,7 @@ function ajouterSort(){
 
     //TODO : ajouter dans le localStorage pour ne pas perdre le sort
     let newSort = creerSort(nom,type,force, cout)
-
     $listeSorts.push(newSort)
-
     afficherSort()
 
 }
